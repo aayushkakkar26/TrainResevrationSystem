@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
+dotenv.config();
 const cookieParser = require("cookie-parser");
 const db = require("./db"); // ✅ Add this line
 const environment = process.env.NODE_ENV || 'development';
@@ -10,7 +11,7 @@ const seatRoutes = require("./routes/seatRoutes");
 const protectedRoutes = require("./routes/protectedRoutes");
 
 // Load env variables
-dotenv.config();
+
 
 const app = express();
 const PORT = process.env.PORT || 5000;
