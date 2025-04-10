@@ -30,33 +30,29 @@ export const AuthProvider = ({ children }) => {
   // Signup function
   const signup = async (userData) => {
     try {
-      const res = await axios.post("/auth/signup", userData, {
-        withCredentials: true
-      });
+      const res = await axios.post("/auth/signup", userData);
       setUser(res.data.user);
       navigate("/dashboard");
     } catch (err) {
       throw err.response?.data?.message || "Signup failed";
     }
   };
-  
+
+  // Login function
   const login = async (userData) => {
     try {
-      const res = await axios.post("/auth/login", userData, {
-        withCredentials: true
-      });
+      const res = await axios.post("/auth/login", userData);
       setUser(res.data.user);
       navigate("/dashboard");
     } catch (err) {
       throw err.response?.data?.message || "Login failed";
     }
   };
-  
+
+  // Logout function
   const logout = async () => {
     try {
-      await axios.get("/auth/logout", {
-        withCredentials: true
-      });
+      await axios.get("/auth/logout");
       setUser(null);
       navigate("/");
     } catch (err) {
