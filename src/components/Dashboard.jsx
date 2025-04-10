@@ -15,9 +15,7 @@ export default function Dashboard() {
 
   const fetchSeats = async () => {
     try {
-      const res = await axios.get("/seats", {
-        withCredentials: true,
-      })
+      const res = await axios.get("/seats")
     
       
       setSeats(res.data)
