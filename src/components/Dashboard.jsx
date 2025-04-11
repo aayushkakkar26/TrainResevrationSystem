@@ -58,16 +58,16 @@ export default function Dashboard() {
 
   const renderSeats = () => {
     return seats.map((seat) => {
-      let bgColor = "bg-emerald-500" // Available seats
+      let bgColor = "bg-emerald-500" 
       let hoverEffect = "hover:bg-emerald-600"
       let label = "Available"
 
       if (seat.is_booked && seat.user_id === user?.id) {
-        bgColor = "bg-blue-500" // User's booked seats
+        bgColor = "bg-blue-500" 
         hoverEffect = "hover:bg-blue-600"
         label = "Your seat"
       } else if (seat.is_booked && seat.user_id !== user?.id) {
-        bgColor = "bg-gray-500" // Other users' booked seats
+        bgColor = "bg-gray-500" 
         hoverEffect = "hover:bg-gray-700"
         label = "Booked"
       }
@@ -155,7 +155,7 @@ export default function Dashboard() {
                 <span className="text-sm text-gray-300">Your seats</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-4 h-4 bg-red-600 rounded-full"></div>
+                <div className="w-4 h-4 bg-gray-500 rounded-full"></div>
                 <span className="text-sm text-gray-300">Booked by others</span>
               </div>
             </div>
